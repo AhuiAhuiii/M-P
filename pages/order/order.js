@@ -1,4 +1,5 @@
 // pages/order/order.js
+const app = getApp()
 Page({
 
     /**
@@ -11,7 +12,21 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
+    getInfo()
+    {
+        wx.getUserProfile({
+          desc: '授权登陆',
+          success(res){
+            console.log('授权成功',res)
+            app.globalData.userInfo = res.userInfo    
+            console.log('授权之后',app.globalData.userInfo)
+            wx.setStorageSync('userInfo', res.userInfo)
+          }
+        })
+    },
+
     onLoad(options) {
+        
 
     },
 
@@ -26,7 +41,29 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        if(app.globalData.token==null){
+            app.globalData.token=1
+            wx.showModal({
+            confirmText: '收到',
+            content: '请先授权登录',
+            title: '提示',
+            success: (result) => {
+              wx.getUserProfile({
+                  desc: '授权登陆',
+                  success(res){
+                    console.log('授权成功',res)
+                    app.globalData.userInfo = res.userInfo    
+                    
+                    wx.setStorageSync('userInfo', res.userInfo)
+                  }
+                })
+            },
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+        }
+        
+          
     },
 
     /**

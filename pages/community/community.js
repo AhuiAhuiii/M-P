@@ -70,6 +70,7 @@ Page({
     },
 
     AddNew:function(){
+        
         if(app.globalData.userInfo != null){
         wx.navigateTo({
             url: 'add',
@@ -79,7 +80,17 @@ Page({
               confirmText: '收到',
               content: '请先授权登录',
               title: '提示',
-              success: (result) => {},
+              success: (result) => {
+                wx.getUserProfile({
+                    desc: '授权登陆',
+                    success(res){
+                      console.log('授权成功',res)
+                      app.globalData.userInfo = res.userInfo    
+                      
+                      wx.setStorageSync('userInfo', res.userInfo)
+                    }
+                  })
+              },
               fail: (res) => {},
               complete: (res) => {},
             })
@@ -123,7 +134,17 @@ Page({
                 confirmText: '收到',
                 content: '请先授权登录',
                 title: '提示',
-                success: (result) => {},
+                success: (result) => {
+                  wx.getUserProfile({
+                      desc: '授权登陆',
+                      success(res){
+                        console.log('授权成功',res)
+                        app.globalData.userInfo = res.userInfo    
+                        
+                        wx.setStorageSync('userInfo', res.userInfo)
+                      }
+                    })
+                },
                 fail: (res) => {},
                 complete: (res) => {},
               })
@@ -225,7 +246,17 @@ Page({
                 confirmText: '收到',
                 content: '请先授权登录',
                 title: '提示',
-                success: (result) => {},
+                success: (result) => {
+                  wx.getUserProfile({
+                      desc: '授权登陆',
+                      success(res){
+                        console.log('授权成功',res)
+                        app.globalData.userInfo = res.userInfo    
+                        
+                        wx.setStorageSync('userInfo', res.userInfo)
+                      }
+                    })
+                },
                 fail: (res) => {},
                 complete: (res) => {},
               })

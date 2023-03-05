@@ -27,7 +27,22 @@ page{
     border-radius: 20rpx;
     margin-bottom: 20rpx;
 }
-  .container {
+.inputName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#5b6456;
+    height: 80rpx;
+    width: 180rpx;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+}
+.inputName .Name{
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.container {
     display: flex;
   }
   
@@ -63,3 +78,4 @@ page{
     align-self: flex-end;
     color: rgba(138, 137, 124, 1) ;
 }
+

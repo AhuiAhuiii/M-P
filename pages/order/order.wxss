@@ -13,6 +13,17 @@
     font-weight: bold;
     text-shadow:10rpx 10rpx 18rpx black;
 } 
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#5b6456;
+    height: 80rpx;
+    width: 180rpx;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+    z-index: 99;
+}
 .Mountain{
     position: relative;
     left: 125rpx;

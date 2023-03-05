@@ -9,7 +9,7 @@ Page({
     },
 
     onLoad:function(options) {
-        console.log(app.globalData.userInfo)
+        console.log('onload',app.globalData.userInfo)
     },
     getValue(e){
         console.log(e.detail.value)
@@ -84,8 +84,8 @@ Page({
     submitData(){
         wx.cloud.database().collection('actions').add({
             data:{
-                nickName:app.globalData.userInfo.nickName,
-                faceImg:app.globalData.userInfo.avatarUrl,
+                nickName:app.globalData.nickName,
+                faceImg:app.globalData.avatarUrl,
                 text:this.data.inputValue,
                 images:this.data.cloudImgList,
                 time:Date.now(),

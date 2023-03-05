@@ -1,6 +1,6 @@
 <!--pages/order/order.wxml-->
 <view class = "All">
-    <view class = "Title1">M&P 山野</view>
+    <view bindtap="getInfo" class = "Title1">M&P 山野</view>
     <view class = "Circle"></view>
     <image class = "Mountain" src = "/icon/mountain.png"></image>
     <view class = "Title2">M&P COFFEE</view>

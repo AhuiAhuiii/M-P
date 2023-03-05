@@ -55,16 +55,29 @@ page{
 }
 .main .texts{
     background-color: #7b867b;
-    height: 200rpx;
+    max-height: fit-content;
     width: 30%;
     opacity: 10;
     border-radius: 10px;
     display: flex;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: normal;
+
+}
+.Text{
+    margin-left: 10rpx;
+    font-weight: 900;
+    word-wrap: normal;
+    color: #343a34 ;
 }
 .main .imgList .image-1{
-    height: 80%;
-    width: 80%;
-    margin: auto;
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
     border-radius: 10px;
 }
 .main .imgList .image-2-3{
@@ -81,17 +94,7 @@ page{
     border-radius: 10px;
 
 }
-.texts {
-    display: flex;
-    flex-wrap: wrap;
-    word-wrap: normal;
-}
-.Text{
-    margin: auto;
-    font-weight: 900;
-    word-wrap: normal;
-    color: #343a34 ;
-}
+
 .del {
     margin: 10rpx;
     width: 80rpx;
