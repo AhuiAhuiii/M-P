@@ -41,6 +41,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
+        console.log('git111')
         if(app.globalData.token==null){
             app.globalData.token=1
             wx.showModal({
