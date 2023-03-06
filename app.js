@@ -53,6 +53,5 @@ App({
         openid:null,
         nickName:null,
         avatarUrl:null,
-        token:null,
       }
 })

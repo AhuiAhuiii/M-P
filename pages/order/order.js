@@ -41,9 +41,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        console.log('gitfeatnew')
-        if(app.globalData.token==null){
-            app.globalData.token=1
+        console.log('order.onShow.globalData.userInfo:',app.globalData.userInfo)
+        if(app.globalData.userInfo==null){
             wx.showModal({
             confirmText: '收到',
             content: '请先授权登录',
