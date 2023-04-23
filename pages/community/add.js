@@ -82,6 +82,31 @@ Page({
     },
 
     submitData(){
+        //获取当前位置
+        wx.getLocation({
+            type: 'gcj02', // 国测局坐标
+            success: function(res) {
+              var latitude = res.latitude // 纬度
+              var longitude = res.longitude // 经度
+              console.log(latitude, longitude)
+              wx.cloud.database().collection('locationList').add({
+                data:{
+                    _openid:app.globalData.userInfo._openid,
+                    ico:app.globalData.avatarUrl,
+                    latitude:latitude,
+                    longitude:longitude
+                }
+            })
+            }
+          })
+        
+          if(app.globalData.avatarUrl==null){
+            app.globalData.avatarUrl=app.globalData.userInfo.avatarUrl
+          }
+          if(app.globalData.nickName==null){
+            app.globalData.nickName=app.globalData.userInfo.nickName
+          }
+
         wx.cloud.database().collection('actions').add({
             data:{
                 nickName:app.globalData.nickName,

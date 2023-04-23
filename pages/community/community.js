@@ -12,6 +12,7 @@ Page({
 
     onShow(){
         this.getActionsList()
+        
     },
 
     onLoad:function() {

@@ -30,7 +30,10 @@ page{
 
 }
 
-
+#map{
+    width: 100%;
+    height: 1000rpx;
+}
 .main{
     display: flex;
     flex-direction: row;

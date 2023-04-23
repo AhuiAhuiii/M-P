@@ -1,8 +1,9 @@
-<view class="map">
-    
-</view>
-<view class="title">
-    <text class="titlename">我的地址
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="12"
+    bindtap="tapMap" 
+    markers="{{markers}}"></map>
+
+<view class="title" bindtap="tap">
+    <text class="titlename">看看好友在哪
     </text>
 </view>
 
